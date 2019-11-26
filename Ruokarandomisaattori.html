@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Supertieteellinen ruokasuunnittelu-ohjelmisto</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+</head>
+<body>
+    <button type="button" onclick="heippa()">
+        Arvo päivän ruoka
+    </button>
+    <p id="ruokaehdotus">-</p>
+Lisää listaan uusi ruoka:
+    <div>
+        <textarea rows="1" cols="50" name="comment" form="usrform">
+                Uuden ruoan nimi...</textarea>
+        
+</div>
+<button>Lisää</button>
+        <script>
+            let ruokalista=["lasagne", "pizza", "makaroonilaatikko", "kanapasta", "tonnikalapasta"]
+            let valinta
+            let eilinenruoka
+            
+            function ehdotaRuokaa(ruokaehdotusMerkkijono) {
+                  let ruokaedotus = document.getElementById("ruokaehdotus")
+                  ruokaedotus.innerHTML = ruokaehdotusMerkkijono
+            }
+            function heippa() {
+                while (valinta===eilinenruoka) {
+                    valinta=Math.floor(Math.random() * ruokalista.length)
+                }
+                eilinenruoka=valinta
+                ehdotaRuokaa("Päivän ruoka: " + ruokalista[valinta])
+                //   alert("Heippa Ruokarandomisaattori, täällä javascript!")
+            }
+            
+            // Toiminnallisuudet:
+            // Ylläpitää listaa erilaisista ruoista.
+            // Arpoo jonkin ruoan listasta nappia painettaessa.
+            // Näyttää ruoan käyttöliittymässä.
+        </script>
+
+
+</body>
+</html>
